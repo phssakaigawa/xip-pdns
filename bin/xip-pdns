@@ -49,6 +49,7 @@ read_helo() {
 
 read_query() {
   read_cmd TYPE QNAME QCLASS QTYPE ID IP
+  QNAME=$(echo "$QNAME" | tr '[:upper:]' '[:lower:]')
 }
 
 send_answer() {
